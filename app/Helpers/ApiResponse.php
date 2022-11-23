@@ -25,7 +25,7 @@ class ApiResponse
         return $new;
     }
 
-    public static function createFailResponse()
+    public static function createFailedResponse()
     {
         $new = new self;
 
@@ -103,7 +103,7 @@ class ApiResponse
 
     public function setErrors(array $error = null)
     {
-        $this->errors = array($error);
+        $this->errors = $error;
         return $this;
     }
 
