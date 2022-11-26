@@ -24,6 +24,18 @@ services:
         networks:
             - store-backend
 
+    #Batch
+    php-batch:
+        build:
+            context: .
+            dockerfile: deployment/batch/Dockerfile
+        volumes:
+            - ./:/var/www
+        networks:
+            - store-backend
+        depends_on:
+            - pgsql
+
     # Database
     pgsql:
         image: "postgres:14"
